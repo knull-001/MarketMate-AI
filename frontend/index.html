@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8f5">
+  <title>MarketMate AI — Marketing Workspace</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/">
+        <span class="brand-icon">M</span>
+        <span>MarketMate <small>AI WORKSPACE</small></span>
+      </a>
+
+      <p class="nav-label">WORKSPACE</p>
+      <button class="nav-item active" data-feature="audience">◎
+        <span>Audience Finder</span>
+      </button>
+      <button class="nav-item" data-feature="strategy">↗
+        <span>Marketing Strategy</span>
+      </button>
+      <button class="nav-item" data-feature="content">▤
+        <span>Content Studio</span>
+      </button>
+      <button class="nav-item" data-feature="outreach">✉
+        <span>Customer Outreach</span>
+      </button>
+
+      <div class="sidebar-bottom">
+        <span class="status-dot"></span>
+        Demo workspace
+        <p>Built for small businesses and independent creators.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <span>Marketing workspace / <b id="crumb">Audience Finder</b></span>
+        <span class="mode-label">● DEMO-READY</span>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">YOUR SMALL-BUSINESS COPILOT</p>
+        <h1>Turn your business into<br>your next growth opportunity.</h1>
+        <p class="subtitle">
+          Understand your audience, find your message, and plan
+          your next marketing move.
+        </p>
+      </section>
+
+      <section class="workspace">
+        <div class="panel form-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">STEP 01</p>
+              <h2>Your business</h2>
+            </div>
+            <span class="step-number">01</span>
+          </div>
+
+          <form id="business-form">
+            <label for="business_name">Business name</label>
+            <input id="business_name" name="business_name"
+                   placeholder="e.g. Sunday Bakes" required maxlength="100">
+
+            <label for="business_type">Business type</label>
+            <input id="business_type" name="business_type"
+                   placeholder="e.g. Home bakery" required maxlength="150">
+
+            <label for="product">What do you sell?</label>
+            <textarea id="product" name="product" rows="3"
+                      placeholder="Describe your product or service..."
+                      required maxlength="500"></textarea>
+
+            <label for="location">Location or market</label>
+            <input id="location" name="location"
+                   placeholder="e.g. Delhi or online" maxlength="150">
+
+            <label for="budget">Marketing budget</label>
+            <select id="budget" name="budget">
+              <option>₹0 — organic marketing only</option>
+              <option>Under ₹1,000 per month</option>
+              <option>₹1,000–₹5,000 per month</option>
+              <option>Flexible budget</option>
+            </select>
+
+            <label for="audience">Target audience (optional)</label>
+            <input id="audience" name="audience"
+                   placeholder="e.g. Students and young professionals"
+                   maxlength="300">
+
+            <button class="primary-button" type="submit" id="generate">
+              Generate marketing insights <span>→</span>
+            </button>
+            <p class="form-note">
+              Use example information. Don't enter confidential customer data.
+            </p>
+          </form>
+        </div>
+
+        <div class="panel result-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">STEP 02</p>
+              <h2 id="result-title">Audience Finder</h2>
+            </div>
+            <span class="result-icon">✳</span>
+          </div>
+
+          <div id="welcome" class="welcome">
+            <div class="welcome-art">✳</div>
+            <h3>Your next move starts here.</h3>
+            <p>
+              Fill in your business details, select a tool from the
+              sidebar, and generate a starting point for your marketing.
+            </p>
+            <div class="tip">
+              <b>Tip</b>
+              Be specific about what you sell and the problem it solves.
+            </div>
+          </div>
+
+          <div id="loading" class="loading hidden">
+            <span class="spinner"></span>
+            Preparing your results...
+          </div>
+
+          <div id="output" class="output hidden">
+            <div class="output-meta">
+              <span id="provider-label">DEMO OUTPUT</span>
+              <button id="copy" class="secondary-button" type="button">
+                Copy results
+              </button>
+            </div>
+            <pre id="result-text"></pre>
+            <p id="disclaimer" class="disclaimer"></p>
+          </div>
+
+          <p id="error" class="error hidden" role="alert"></p>
+        </div>
+      </section>
+
+      <footer>
+        <span>MarketMate AI · Open-source project</span>
+        <span>Ideas to action, one step at a time.</span>
+      </footer>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
