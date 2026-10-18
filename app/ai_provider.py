@@ -15,7 +15,7 @@ class GeminiProvider:
             )
 
         self.client = genai.Client()
-        self.model = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+        self.model = os.getenv("GEMINI_MODEL", "gemma-4-26b-a4b-it")
 
     def generate(self, prompt: str) -> str:
         response = self.client.models.generate_content(
